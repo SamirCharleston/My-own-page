@@ -3,7 +3,7 @@
 * {
     border: 0;
     margin: 0;
-    border: 0;
+    padding: 0;
     text-decoration: none;
     color: white;
     font-size: 1em;
@@ -30,10 +30,6 @@ html {
 
 body {
     background-color: var(--color-background);
-}
-
-body {
-    background-color: gray;
 }
 
 header,
@@ -68,6 +64,30 @@ header .menu-top {
 header #hidden-menu {
     display: none;
 }
+
+main .section-top {
+    display: flex;
+    padding: 10vw;
+    justify-content: space-evenly;
+}
+
+main .section-top #picture-top-banner {
+    width: 35vw;
+}
+
+main .section-top .container-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    max-width: 370px;
+}
+
+main .section-top .container-text .text-greeting {
+    text-align: center;
+    font-size: 25px;
+}
+
+
 
 
 /*Media query selectora*/
