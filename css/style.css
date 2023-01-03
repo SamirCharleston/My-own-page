@@ -87,7 +87,9 @@ main .section-top .container-text .text-greeting {
     font-size: 25px;
 }
 
-
+main .section-top .container-text .text-presentation {
+    text-align: justify;
+}
 
 
 /*Media query selectora*/
