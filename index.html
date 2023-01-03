@@ -17,15 +17,16 @@
 <body>
     <header class="top-menu">
         <nav class="nav-bar-menu">
-            <a href="#" title="Back to top" class="menu-top" id="top">Top</a>
-            <a href="#" title="Go to About me" id="about-me">About me</a>
-            <a href="#" title="Go to my Technologies" id="technologies">Technologies</a>
-            <a href="#" title="Go to my Projects" id="projects">Projects</a>
-            <a href="#" title="Go to my Contact" id="contact">Contact</a>
-            <a href="#" title="Change color theme" id="color">Color <img src="img/top_menu/color_lens.svg"
-                    alt="color pallet"></a>
-            <a href="#" title="Change Language" id="language">Language <img src="img/top_menu/mdi_language.svg"
-                    alt="color pallet"></a>
+            <a href="#top" title="Back to top" rel="bookmark" target="_self" class="menu-top" id="top-button">Top</a>
+            <a href="#about-me" title="Go to About me" class="menu-top" id="about-me-button">About me</a>
+            <a href="#technologies" title="Go to my Technologies" class="menu-top"
+                id="technologies-button">Technologies</a>
+            <a href="#projects" title="Go to my Projects" class="menu-top" id="projects-button">Projects</a>
+            <a href="#contact" title="Go to my Contact" class="menu-top" id="contact-button">Contact</a>
+            <button type="button" title="Change color theme" class="menu-top" id="color-button">Color <img
+                    src="img/top_menu/color_lens.svg" alt="color pallet"></button>
+            <button type="button" title="Change Language" class="menu-top" id="language-button">Language <img
+                    src="img/top_menu/mdi_language.svg" alt="color pallet"></button>
         </nav>
 
         <button type="button" name="hidden-menu" id="hidden-menu">
@@ -36,7 +37,7 @@
     <main>
         <h1 hidden>Samir's Portfolio</h1>
 
-        <section class="section-top">
+        <section class="section-top" id="top">
             <article class="text-greeting">Hi, I'm Samir.<span hidden> This is my portfolio's page. Be Welcome!
                     :)</span></article>
 
@@ -51,7 +52,7 @@
             </article>
         </section>
 
-        <section class="section-aboutme">
+        <section class="section-aboutme" id="about-me">
 
             <div class="diagonal-cut">
                 <h2>About me</h2>
@@ -89,7 +90,7 @@
             <hr class="diagonal-cut">
         </section>
 
-        <section class="section-my-technologies">
+        <section class="section-my-technologies" id="technologies">
             <h2>My technologies</h2>
 
             <hr class="separator">
@@ -150,7 +151,7 @@
             <hr class="separator">
         </section>
 
-        <section class="section-my-projects">
+        <section class="section-my-projects" id="projects">
 
             <h2>My projects</h2>
 
@@ -261,7 +262,7 @@
             </div>
         </section>
 
-        <section class="section-contact-me">
+        <section class="section-contact-me" id="contact">
             <h2>Contact me</h2>
             <div class="contact-platform">
                 <img src="./img/contactme_section/whatsapp.svg" alt="whatsapp icon" id="whatsapp">
@@ -296,7 +297,7 @@
                     </div>
                 </fieldset>
             </form>
-            <div class="social-media">
+            <div id="social-media">
                 <p>My social media</p>
                 <div class="social-media-icons">
                     <a href="https://www.linkedin.com/in/samir-charleston/" rel="external" target="_blank">
