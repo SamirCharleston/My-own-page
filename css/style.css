@@ -8,15 +8,15 @@
     color: white;
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 :root {
     --color-background: black;
     --color-menu-letters: white;
     --color-top-letters: white;
-    --color-about-me-letters: #A3FF2F;
+    --color-about-me: #a3ff2f;
     --color-background-text-about-me: linear-gradient(327.59deg, #A3FF2F 37.96%, rgba(163, 255, 47, 0) 50%);
-
     --font-size-top-menu: 15px;
 }
 
@@ -73,6 +73,7 @@ main .section-top {
 
 main .section-top #picture-top-banner {
     width: 35vw;
+    max-width: 500px;
 }
 
 main .section-top .container-text {
@@ -89,6 +90,25 @@ main .section-top .container-text .text-greeting {
 
 main .section-top .container-text .text-presentation {
     text-align: justify;
+}
+
+main .section-about-me .diagonal-cut {
+    height: 10vw;
+    background: linear-gradient(355deg, var(--color-about-me) 49%, rgba(163, 262, 47, 0) 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .section-about-me #diagonal-cut-below {
+    background: linear-gradient(175deg, var(--color-about-me) 49%, rgba(163, 262, 47, 0) 50%);
+}
+
+main .section-about-me .diagonal-cut h2 {
+    font-size: 4em;
+    font-weight: 700;
+    color: var(--color-about-me);
+    mix-blend-mode: difference;
 }
 
 
