@@ -245,7 +245,11 @@ main .section-my-technologies .separator {
     box-shadow: 0px 4px 4px 0px black;
     height: 5px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+}
+
+main .section-my-technologies #separator-below {
+    box-shadow: 0px -4px 4px black;
 }
 
 main .section-my-technologies .container-my-technologies {
@@ -262,10 +266,23 @@ main .section-my-technologies .yellow-square-animated {
 main .section-my-technologies .frame-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.29vw;
 }
 
 main .section-my-technologies .frame-scroll {
     display: flex;
+    z-index: 1;
+    column-gap: 2.29vw;
+}
+
+main .section-my-technologies .frame-scroll:first-child {
+    margin-top: 3vw;
+}
+
+main .section-my-technologies .frame-scroll:last-child {
+    margin-bottom: 3vw;
 }
 
 main .section-my-technologies .frame-scroll .frame {
@@ -275,6 +292,10 @@ main .section-my-technologies .frame-scroll .frame {
     align-items: center;
     justify-content: center;
     background-color: var(--color-my-technologies);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0px -2px 4px rgb(0 0 0 / 25%);
+    filter: drop-shadow(0px 4px 4px rgba(251, 255, 47, 0.2)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 main .section-my-technologies .frame-scroll img {
