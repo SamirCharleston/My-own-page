@@ -16,6 +16,7 @@
     --color-menu-letters: white;
     --color-top-letters: white;
     --color-about-me: #a3ff2f;
+    --color-my-technologies: #FBFF2F;
     --color-about-me-shadow: rgb(163 255 47 / 20%);
     --font-size-top-menu: 15px;
     --direction-down: -20px;
@@ -226,6 +227,59 @@ main .section-avatar #object-2 {
     left: unset;
     bottom: -20px;
     right: 80px;
+}
+
+main .title-container h2 {
+    font-size: 4em;
+    font-weight: 700;
+    text-align: center;
+}
+
+main .section-my-technologies .title-container h2 {
+    color: var(--color-my-technologies);
+    padding: 5vw 0 2vw;
+}
+
+main .section-my-technologies .separator {
+    background-color: var(--color-my-technologies);
+    box-shadow: 0px 4px 4px 0px black;
+    height: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+main .section-my-technologies .container-my-technologies {
+    position: relative;
+}
+
+main .section-my-technologies .yellow-square-animated {
+    height: 40px;
+    width: 40px;
+    background: var(--color-my-technologies);
+    position: absolute;
+}
+
+main .section-my-technologies .frame-container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .section-my-technologies .frame-scroll {
+    display: flex;
+}
+
+main .section-my-technologies .frame-scroll .frame {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-my-technologies);
+}
+
+main .section-my-technologies .frame-scroll img {
+    height: 84%;
+    width: 84%;
 }
 
 /*Media query selectora*/
