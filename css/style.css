@@ -357,15 +357,31 @@ main .section-my-projects #title-my-projects h2 {
 
 .section-my-projects .expositor {
     width: 100%;
+    height: 390px;
+    position: relative;
 }
 
 .section-my-projects .project-preview {
     width: 100%;
 }
 
-.section-my-projects .retangle-project-situation {}
+.section-my-projects .retangle-project-situation {
+    position: absolute;
+    width: 274.08px;
+    left: 98.49px;
+    transform: rotate(-32.67deg);
+    background: var(--color-background);
+    height: 40px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.section-my-projects .retangle-project-situation p {}
+.section-my-projects .retangle-project-situation p {
+    text-indent: 30px;
+    color: var(--color-my-projects);
+}
 
 .section-my-projects .project-description {}
 
