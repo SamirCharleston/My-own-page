@@ -18,6 +18,7 @@
     --color-about-me: #a3ff2f;
     --color-my-technologies: #FBFF2F;
     --color-about-me-shadow: rgb(163 255 47 / 20%);
+    --color-my-projects: #FF7A2F;
     --font-size-top-menu: 15px;
     --direction-down: -20px;
 }
@@ -233,6 +234,7 @@ main .title-container h2 {
     font-size: 4em;
     font-weight: 700;
     text-align: center;
+    padding: 8vw 0 2vw;
 }
 
 main .section-my-technologies .title-container h2 {
@@ -286,8 +288,8 @@ main .section-my-technologies .frame-scroll:last-child {
 }
 
 main .section-my-technologies .frame-scroll .frame {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,6 +317,83 @@ main .section-my-technologies .frame-scroll svg .icon-fill-none {
 main .section-my-technologies .frame-scroll svg .icon-stroke-none {
     stroke: none;
 }
+
+main .section-my-projects #title-my-projects h2 {
+    color: var(--color-my-projects);
+}
+
+.section-my-projects .container-frame-projects {
+    display: flex;
+    gap: 3vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.section-my-projects .rectangular-expositor {
+    width: 22.22vw;
+    min-width: 320px;
+}
+
+.section-my-projects .main-frame {
+    height: 30.76vw;
+    min-height: 443px;
+    overflow: hidden;
+}
+
+.section-my-projects .retangle-background {
+    height: 53px;
+    width: 100%;
+    background-color: var(--color-my-projects);
+    display: flex;
+    align-items: center;
+}
+
+.section-my-projects .project-name {
+    color: var(--color-background);
+    font-weight: 700;
+    font-size: 1.5em;
+    text-indent: 1em;
+}
+
+.section-my-projects .expositor {
+    width: 100%;
+    height: 390px;
+    position: relative;
+}
+
+.section-my-projects .project-preview {
+    width: 100%;
+}
+
+.section-my-projects .retangle-project-situation {
+    position: absolute;
+    width: 274.08px;
+    left: 98.49px;
+    transform: rotate(-32.67deg);
+    background: var(--color-background);
+    height: 40px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-my-projects .retangle-project-situation p {
+    text-indent: 1em;
+    color: var(--color-my-projects);
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.section-my-projects .project-description {}
+
+.section-my-projects .title-container {}
+
+.section-my-projects .project-seal {}
+
+.section-my-projects .project-type {}
+
+.section-my-projects .body-description {}
 
 /*Media query selectora*/
 
