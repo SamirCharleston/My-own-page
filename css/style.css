@@ -379,8 +379,10 @@ main .section-my-projects #title-my-projects h2 {
 }
 
 .section-my-projects .retangle-project-situation p {
-    text-indent: 30px;
+    text-indent: 1em;
     color: var(--color-my-projects);
+    font-weight: 700;
+    font-size: 1em;
 }
 
 .section-my-projects .project-description {}
