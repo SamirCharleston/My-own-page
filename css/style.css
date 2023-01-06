@@ -402,6 +402,88 @@ main .section-my-projects #title-my-projects h2 {
     margin-bottom: 3vw;
 }
 
+.section-contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2vw;
+    width: 40vw;
+    margin: auto;
+}
+
+.section-contact-me .container-contact-platform {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.section-contact-me .contact-platform {
+    display: flex;
+    align-items: center;
+}
+
+.section-contact-me .platform-name {
+    text-indent: 1em;
+}
+
+.section-contact-me .mid-text {
+    font-size: 1.5em;
+}
+
+.section-contact-me form {
+    width: 100%;
+}
+
+.section-contact-me .form-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.section-contact-me .form-sheet .form-title {
+    margin-bottom: 1.5vw;
+}
+
+.section-contact-me .form-sheet input,
+.section-contact-me textarea {
+    border: solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+    text-indent: 1em;
+}
+
+.section-contact-me .form-sheet input[type="email"] {
+    border: none;
+    outline: 0;
+}
+
+.section-contact-me .form-sheet input[type="email"]:focus {
+    background-color: white;
+    color: black;
+}
+
+.section-contact-me textarea {
+    padding: 0.3em 0.4em;
+}
+
+.section-contact-me .input-height {
+    height: 4.44vw;
+}
+
+.section-contact-me .send-button {
+    border: solid 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-contact-me .send-button button {
+    height: 100%;
+}
+
+.section-contact-me #send-icon {}
+
 /*Media query selectora*/
 
 @media (max-width: 480px) {
