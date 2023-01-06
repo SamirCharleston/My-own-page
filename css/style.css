@@ -387,13 +387,20 @@ main .section-my-projects #title-my-projects h2 {
 
 .section-my-projects .project-description {}
 
-.section-my-projects .title-container {}
+.section-my-projects .type-description {
+    display: flex;
+    align-items: center;
+    margin: 1vw 1em;
+}
 
 .section-my-projects .project-seal {}
 
 .section-my-projects .project-type {}
 
-.section-my-projects .body-description {}
+.section-my-projects .body-description {
+    text-align: justify;
+    margin-bottom: 3vw;
+}
 
 /*Media query selectora*/
 
