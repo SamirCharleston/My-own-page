@@ -452,6 +452,13 @@ main .section-my-projects #title-my-projects h2 {
     border: solid 1px;
     background-color: rgba(0, 0, 0, 0);
     text-indent: 1em;
+    transition: all 0.3s;
+}
+
+.section-contact-me .form-sheet input:focus,
+.section-contact-me textarea:focus {
+    background-color: white;
+    color: var(--color-background);
 }
 
 
@@ -482,6 +489,38 @@ main .section-my-projects #title-my-projects h2 {
 .section-contact-me .form-sheet input[type="email"]:focus {
     background-color: white;
     color: black;
+}
+
+.section-contact-me #social-media {
+    width: 100%;
+}
+
+.section-contact-me #social-media p:first-child {
+    margin: 8vw 0 2vw;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.section-contact-me .social-media-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    margin-top: 9vw;
+    background-color: white;
+    height: 47px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p,
+footer a {
+    color: black;
+    font-size: 1em;
+    text-align: center;
 }
 
 /*Media query selectora*/
