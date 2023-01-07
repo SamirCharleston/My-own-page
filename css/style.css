@@ -16,7 +16,9 @@
     --color-menu-letters: white;
     --color-top-letters: white;
     --color-about-me: #a3ff2f;
+    --color-my-technologies: #FBFF2F;
     --color-about-me-shadow: rgb(163 255 47 / 20%);
+    --color-my-projects: #FF7A2F;
     --font-size-top-menu: 15px;
     --direction-down: -20px;
 }
@@ -226,6 +228,299 @@ main .section-avatar #object-2 {
     left: unset;
     bottom: -20px;
     right: 80px;
+}
+
+main .title-container h2 {
+    font-size: 4em;
+    font-weight: 700;
+    text-align: center;
+    padding: 8vw 0 2vw;
+}
+
+main .section-my-technologies .title-container h2 {
+    color: var(--color-my-technologies);
+    padding: 5vw 0 2vw;
+}
+
+main .section-my-technologies .separator {
+    background-color: var(--color-my-technologies);
+    box-shadow: 0px 4px 4px 0px black;
+    height: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+main .section-my-technologies #separator-below {
+    box-shadow: 0px -4px 4px black;
+}
+
+main .section-my-technologies .container-my-technologies {
+    position: relative;
+}
+
+main .section-my-technologies .yellow-square-animated {
+    height: 40px;
+    width: 40px;
+    background: var(--color-my-technologies);
+    position: absolute;
+}
+
+main .section-my-technologies .frame-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.29vw;
+}
+
+main .section-my-technologies .frame-scroll {
+    display: flex;
+    z-index: 1;
+    column-gap: 2.29vw;
+}
+
+main .section-my-technologies .frame-scroll:first-child {
+    margin-top: 3vw;
+}
+
+main .section-my-technologies .frame-scroll:last-child {
+    margin-bottom: 3vw;
+}
+
+main .section-my-technologies .frame-scroll .frame {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-my-technologies);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0px -2px 4px rgb(0 0 0 / 25%);
+    filter: drop-shadow(0px 4px 4px rgba(251, 255, 47, 0.2)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+main .section-my-technologies .frame-scroll svg {
+    height: 84%;
+    width: 84%;
+}
+
+main .section-my-technologies .frame-scroll svg path {
+    fill: var(--color-background);
+    stroke: var(--color-background);
+}
+
+main .section-my-technologies .frame-scroll svg .icon-fill-none {
+    fill: none;
+}
+
+main .section-my-technologies .frame-scroll svg .icon-stroke-none {
+    stroke: none;
+}
+
+main .section-my-projects #title-my-projects h2 {
+    color: var(--color-my-projects);
+}
+
+.section-my-projects .container-frame-projects {
+    display: flex;
+    gap: 3vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.section-my-projects .rectangular-expositor {
+    width: 22.22vw;
+    min-width: 320px;
+}
+
+.section-my-projects .main-frame {
+    height: 30.76vw;
+    min-height: 443px;
+    overflow: hidden;
+}
+
+.section-my-projects .retangle-background {
+    height: 53px;
+    width: 100%;
+    background-color: var(--color-my-projects);
+    display: flex;
+    align-items: center;
+}
+
+.section-my-projects .project-name {
+    color: var(--color-background);
+    font-weight: 700;
+    font-size: 1.5em;
+    text-indent: 1em;
+}
+
+.section-my-projects .expositor {
+    width: 100%;
+    height: 390px;
+    position: relative;
+}
+
+.section-my-projects .project-preview {
+    width: 100%;
+}
+
+.section-my-projects .retangle-project-situation {
+    position: absolute;
+    width: 274.08px;
+    left: 98.49px;
+    transform: rotate(-32.67deg);
+    background: var(--color-background);
+    height: 40px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-my-projects .retangle-project-situation p {
+    text-indent: 1em;
+    color: var(--color-my-projects);
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.section-my-projects .project-description {}
+
+.section-my-projects .type-description {
+    display: flex;
+    align-items: center;
+    margin: 1vw 1em;
+}
+
+.section-my-projects .project-seal {}
+
+.section-my-projects .project-type {}
+
+.section-my-projects .body-description {
+    text-align: justify;
+    margin-bottom: 3vw;
+}
+
+.section-contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2vw;
+    width: 40vw;
+    margin: auto;
+}
+
+.section-contact-me .container-contact-platform {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.section-contact-me .contact-platform {
+    display: flex;
+    align-items: center;
+}
+
+.section-contact-me .platform-name {
+    text-indent: 1em;
+}
+
+.section-contact-me .mid-text {
+    font-size: 1.5em;
+}
+
+.section-contact-me form {
+    width: 100%;
+}
+
+.section-contact-me .form-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.section-contact-me .form-sheet .form-title {
+    margin-bottom: 1.5vw;
+}
+
+.section-contact-me .form-sheet input,
+.section-contact-me textarea {
+    border: solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+    text-indent: 1em;
+    transition: all 0.3s;
+}
+
+.section-contact-me .form-sheet input:focus,
+.section-contact-me textarea:focus {
+    background-color: white;
+    color: var(--color-background);
+}
+
+
+.section-contact-me textarea {
+    padding: 0.3em 0.4em;
+}
+
+.section-contact-me .input-height {
+    height: 4.44vw;
+}
+
+.section-contact-me .send-button {
+    border: solid 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-contact-me .send-button #send-icon {
+    height: 100%;
+}
+
+.section-contact-me .form-sheet input[type="email"] {
+    border: none;
+    outline: 0;
+    width: 100%;
+}
+
+.section-contact-me .form-sheet input[type="email"]:focus {
+    background-color: white;
+    color: black;
+}
+
+.section-contact-me #social-media {
+    width: 100%;
+}
+
+.section-contact-me #social-media p:first-child {
+    margin: 8vw 0 2vw;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.section-contact-me .social-media-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    margin-top: 9vw;
+    background-color: white;
+    height: 47px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p,
+footer a {
+    color: black;
+    font-size: 1em;
+    text-align: center;
 }
 
 /*Media query selectora*/
