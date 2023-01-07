@@ -213,7 +213,7 @@ main .frame-avatar img {
 main .section-avatar .enviorement-object {
     position: absolute;
     left: 50px;
-    background: white;
+    background: var(--color-about-me);
     width: 52px;
     height: 100px;
     border-radius: 60px;
@@ -221,6 +221,10 @@ main .section-avatar .enviorement-object {
     justify-content: center;
     align-items: center;
     top: var(--direction-down);
+}
+
+main .section-avatar .enviorement-object svg path {
+    fill: var(--color-background);
 }
 
 main .section-avatar #object-2 {
@@ -271,6 +275,7 @@ main .section-my-technologies .frame-container {
     justify-content: center;
     align-items: center;
     row-gap: 2.29vw;
+    overflow: scroll;
 }
 
 main .section-my-technologies .frame-scroll {
@@ -527,6 +532,10 @@ footer a {
 
 @media (max-width: 480px) {
 
+    :root {
+        font-size: 13px;
+    }
+
     header #hidden-menu {
         display: unset;
     }
@@ -535,5 +544,33 @@ footer a {
     header #color-button,
     header #contact-button {
         display: none;
+    }
+
+    .section-contact-me {
+        width: unset;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    main .title-container h2 {
+        font-size: 3em;
+    }
+
+    .section-contact-me .social-media-icons {
+        justify-content: space-around;
+    }
+
+    .section-contact-me .form-sheet input,
+    .section-contact-me .input-height,
+    .section-contact-me .send-button #send-icon {
+        height: 30px;
+    }
+
+    .section-contact-me .form-sheet input[type="email"] {
+        height: unset;
+    }
+
+    .social-media-icons img {
+        width: 15vw;
     }
 }
