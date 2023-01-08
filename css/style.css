@@ -651,4 +651,8 @@ footer a {
     .section-contact-me #social-media p:first-child {
         margin-top: 15vw;
     }
+
+    .section-my-projects .container-frame-projects {
+        gap: 15vw;
+    }
 }
