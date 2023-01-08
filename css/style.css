@@ -643,4 +643,12 @@ footer a {
     main .container-about-me .introduction-text {
         margin-bottom: 10vw;
     }
+
+    .section-contact-me {
+        row-gap: 5vw;
+    }
+
+    .section-contact-me #social-media p:first-child {
+        margin-top: 15vw;
+    }
 }
