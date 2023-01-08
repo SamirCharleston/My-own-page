@@ -35,6 +35,10 @@ body {
     background-color: var(--color-background);
 }
 
+.section-divisor {
+    height: 20vw;
+}
+
 header,
 .top-menu {
     position: fixed;
@@ -67,17 +71,21 @@ header .menu-top {
 
 header #hidden-menu {
     display: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 main .section-top {
     display: flex;
-    padding: 10vw;
     justify-content: space-evenly;
 }
 
-main .section-top #picture-top-banner {
+main .section-top .picture-top-banner {
     width: 35vw;
     max-width: 500px;
+}
+
+.picture-top-small {
+    display: none;
 }
 
 main .section-top .container-text {
@@ -94,6 +102,7 @@ main .section-top .container-text .text-greeting {
 
 main .section-top .container-text .text-presentation {
     text-align: justify;
+    text-indent: 1em;
 }
 
 main .section-about-me .diagonal-cut {
@@ -103,7 +112,6 @@ main .section-about-me .diagonal-cut {
     height: 10vw;
     top: 5vw;
     position: relative;
-    /* z-index: 1;*/
 }
 
 main .section-about-me #diagonal-cut-below {
@@ -213,7 +221,7 @@ main .frame-avatar img {
 main .section-avatar .enviorement-object {
     position: absolute;
     left: 50px;
-    background: white;
+    background: var(--color-about-me);
     width: 52px;
     height: 100px;
     border-radius: 60px;
@@ -221,6 +229,10 @@ main .section-avatar .enviorement-object {
     justify-content: center;
     align-items: center;
     top: var(--direction-down);
+}
+
+main .section-avatar .enviorement-object svg path {
+    fill: var(--color-background);
 }
 
 main .section-avatar #object-2 {
@@ -234,12 +246,11 @@ main .title-container h2 {
     font-size: 4em;
     font-weight: 700;
     text-align: center;
-    padding: 8vw 0 2vw;
+    padding: 5vw 0 2vw;
 }
 
 main .section-my-technologies .title-container h2 {
     color: var(--color-my-technologies);
-    padding: 5vw 0 2vw;
 }
 
 main .section-my-technologies .separator {
@@ -271,6 +282,7 @@ main .section-my-technologies .frame-container {
     justify-content: center;
     align-items: center;
     row-gap: 2.29vw;
+    overflow: scroll;
 }
 
 main .section-my-technologies .frame-scroll {
@@ -527,6 +539,10 @@ footer a {
 
 @media (max-width: 480px) {
 
+    :root {
+        font-size: 13px;
+    }
+
     header #hidden-menu {
         display: unset;
     }
@@ -535,5 +551,96 @@ footer a {
     header #color-button,
     header #contact-button {
         display: none;
+    }
+
+    main .section-top {
+        display: flex;
+        padding-top: 20vw;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .picture-top {
+        display: none;
+    }
+
+    .picture-top-banner {
+        min-width: 250px;
+    }
+
+    .picture-top-small {
+        display: unset;
+    }
+
+    .section-contact-me {
+        width: unset;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    main .title-container h2 {
+        font-size: 3em;
+        padding-top: 15vw;
+    }
+
+    .section-contact-me .social-media-icons {
+        justify-content: space-around;
+    }
+
+    .container-contact-platform img {
+        width: 12vw;
+    }
+
+    .section-contact-me .form-sheet input,
+    .section-contact-me .input-height,
+    .section-contact-me .send-button #send-icon {
+        height: 30px;
+    }
+
+    .section-contact-me .form-sheet input[type="email"] {
+        height: unset;
+    }
+
+    .social-media-icons img {
+        width: 15vw;
+    }
+
+    main .section-top .container-text {
+        align-items: center;
+        gap: 16vw;
+    }
+
+    .section-about-me {
+        margin-top: 30vw;
+    }
+
+    main .section-about-me .diagonal-cut,
+    main .section-about-me #diagonal-cut-below {
+        transform: matrix(1, -0.3, 0, 1, 0, 0);
+        height: 30vw;
+        top: 15vw;
+    }
+
+    main .section-about-me #diagonal-cut-below {
+        bottom: 15vw;
+        top: unset;
+    }
+
+    main .section-about-me .title-block {
+        top: 20vw;
+    }
+
+    main .frame-avatar img {
+        width: 33vw;
+    }
+
+    main .container-about-me .complement-text {
+        width: unset;
+        padding: 7vw;
+    }
+
+    main .container-about-me .introduction-text {
+        margin-bottom: 10vw;
     }
 }
