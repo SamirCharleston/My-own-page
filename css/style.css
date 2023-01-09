@@ -56,7 +56,7 @@ header .nav-bar-menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     column-gap: 24px;
     row-gap: 3px;
     border: solid black 5px;
@@ -66,12 +66,26 @@ header .menu-top {
     background-color: var(--color-background);
     cursor: pointer;
     display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+header .menu-bottom {
+    display: flex;
+    column-gap: 24px;
 }
 
 header #hidden-menu {
     display: none;
     background-color: rgba(0, 0, 0, 0);
+}
+
+header #hidden-menu svg rect {
+    transition: all 0.3s;
+}
+
+header #hidden-menu:active svg rect {
+    fill-opacity: 0.5;
 }
 
 main .section-top {
@@ -277,22 +291,26 @@ main .section-my-technologies .yellow-square-animated {
 }
 
 main .section-my-technologies .frame-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 2.29vw;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 main .section-my-technologies .frame-scroll {
     display: flex;
     z-index: 1;
     column-gap: 2.29vw;
+    margin-top: 2.29vw;
+    justify-content: center;
+    overflow: scroll;
+    scroll-snap-type: inline mandatory;
+    scroll-snap-align: center;
 }
 
-main .section-my-technologies .frame-scroll:first-child {
-    margin-top: 3vw;
+main .section-my-technologies .frame-scroll>* {
+    scroll-snap-align: center;
+}
+
+main .section-my-technologies .frame-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 main .section-my-technologies .frame-scroll:last-child {
@@ -302,7 +320,8 @@ main .section-my-technologies .frame-scroll:last-child {
 main .section-my-technologies .frame-scroll .frame {
     height: 100px;
     width: 100px;
-    display: flex;
+    min-width: 100px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--color-my-technologies);
@@ -547,9 +566,7 @@ footer a {
         display: unset;
     }
 
-    header #language-button,
-    header #color-button,
-    header #contact-button {
+    header .menu-bottom {
         display: none;
     }
 
@@ -652,7 +669,26 @@ footer a {
         margin-top: 15vw;
     }
 
-    .section-my-projects .container-frame-projects {
-        gap: 15vw;
+
+    main .section-my-technologies .frame-scroll .frame {
+        min-width: 150px;
+        min-height: 150px;
     }
+
+    main .section-my-technologies .frame-scroll {
+        justify-content: unset;
+    }
+
+    main .section-my-technologies .frame-scroll .frame:first-child {
+        margin-left: 3vw;
+    }
+
+    main .section-my-technologies .frame-scroll .frame:last-child {
+        margin-right: 3vw;
+    }
+
+    main .section-top .container-text .text-presentation {
+        padding: 0 5vw;
+    }
+
 }
