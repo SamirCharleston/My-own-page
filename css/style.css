@@ -566,8 +566,11 @@ footer a {
         display: unset;
     }
 
-    header .menu-bottom {
-        display: none;
+    header .menu-bottom,
+    header .menu-bottom img {
+        height: 0px;
+        font-size: 0;
+        transition: all 0.3s;
     }
 
     main .section-top {
