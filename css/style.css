@@ -554,7 +554,7 @@ footer a {
     text-align: center;
 }
 
-/*Media query selectora*/
+/*Media query selector*/
 
 @media (max-width: 480px) {
 
@@ -571,6 +571,8 @@ footer a {
         height: 0px;
         font-size: 0;
         transition: all 0.3s;
+        flex: 0 1 100%;
+        justify-content: center;
     }
 
     main .section-top {
