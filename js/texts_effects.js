@@ -7,6 +7,9 @@ function typeWriterEffect() {
     titlePresentation.innerHTML = "";
 
     letters.forEach((letter, i) => {
+
+        let phrase += letter;
+
         if (letter !== "-") {
             setTimeout(() => {
                 titlePresentation.innerHTML += letter;
