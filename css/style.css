@@ -21,6 +21,7 @@
     --color-my-projects: #FF7A2F;
     --font-size-top-menu: 15px;
     --direction-down: -20px;
+    --background-gradient: linear-gradient(0deg, black 99%, #a3ff2f);
 }
 
 img {
@@ -32,7 +33,7 @@ html {
 }
 
 body {
-    background-color: var(--color-background);
+    background: var(--background-gradient);
 }
 
 .section-divisor {
@@ -111,7 +112,26 @@ main .section-top .container-text {
 
 main .section-top .container-text .text-greeting {
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5em;
+}
+
+main .section-top .container-text .text-greeting h2::after {
+    content: '|';
+    font-size: 1.6em;
+    margin-left: 0.1em;
+    animation: 0.8s cursor-blink step-end infinite;
+}
+
+@keyframes cursor-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 main .section-top .container-text .text-presentation {

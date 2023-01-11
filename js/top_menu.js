@@ -17,7 +17,6 @@ menu.addEventListener("mouseleave", () => decideIfShowMenu());
 
 window.addEventListener("scroll", () => {
     decideIfShowMenu();
-    graduallyChangeThemeColor();
 });
 
 function decideIfShowMenu() {
@@ -28,15 +27,9 @@ function decideIfShowMenu() {
     }
 }
 
-function graduallyChangeThemeColor() {
+function changeThemeColor() {
 
-
-    if (window.scrollY > 250 && window.scrollY < 1400) {
-
-        let color = convertNumberToColor(250, 1400, window.scrollY);
-
-        rootNode.documentElement.style.setProperty("--color-background", `rgb(${color}, 0, 0)`);
-    }
+    rootNode.documentElement.style.setProperty("--color-about-me", `rgb(${color[0]}, ${color[1]}, ${color[2]})`);
 }
 
 function showMenu() {
@@ -53,18 +46,4 @@ function hideMenu() {
     menuHiddenImg.style.height = "0";
     buttonHiddenMenu.style.display = "unset";
     menuIsShowing = false;
-}
-
-function convertNumberToColor(firstValue, secondValue, variation) {
-
-    let proportion, result;
-    let difference = secondValue - firstValue;
-
-    proportion = difference / 255;
-
-    result = variation / proportion;
-
-    console.log(result);
-
-    return result;
 }
