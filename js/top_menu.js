@@ -1,30 +1,48 @@
 const menu = document.querySelector(".menu-bottom");
-const menuHidden = document.querySelector("header .menu-bottom img");
+const menuHiddenImg = document.querySelector("header .menu-bottom img");
 const buttonHiddenMenu = document.getElementById("hidden-menu");
 const mediaMobileLength = window.matchMedia('(max-width: 480px)');
-let menuIsShowing = false;
+const rootNode = document.getRootNode();
+
+let menuIsShowing = true;
 
 buttonHiddenMenu.addEventListener("click", () => {
     showMenu();
 });
 
-/*When the page is scrolled, the last three options disappear*/
-mediaMobileLength.addEventListener("resize", (event) => {
-    if (mediaMobileLength.matches && menuIsShowing) {
+/*When the page is resized, the last three options were disappear*/
+mediaMobileLength.addEventListener("resize", () => decideIfShowMenu());
+
+menu.addEventListener("mouseleave", () => decideIfShowMenu());
+
+window.addEventListener("scroll", () => {
+    decideIfShowMenu();
+    graduallyChangeThemeColor();
+});
+
+function decideIfShowMenu() {
+    if (menuIsShowing && mediaMobileLength.matches) {
         hideMenu();
-    } else {
+    } else if (!menuIsShowing && !mediaMobileLength.matches) {
         showMenu();
     }
+}
 
-    window.alert(menuIsShowing);
-})
+function graduallyChangeThemeColor() {
 
-hideMenu();
+
+    if (window.scrollY > 250 && window.scrollY < 1400) {
+
+        let color = convertNumberToColor(250, 1400, window.scrollY);
+
+        rootNode.documentElement.style.setProperty("--color-background", `rgb(${color}, 0, 0)`);
+    }
+}
 
 function showMenu() {
     menu.style.height = "31px";
     menu.style.fontSize = "1em";
-    menuHidden.style.height = "unset";
+    menuHiddenImg.style.height = "unset";
     buttonHiddenMenu.style.display = "none";
     menuIsShowing = true;
 }
@@ -32,7 +50,21 @@ function showMenu() {
 function hideMenu() {
     menu.style.height = "0";
     menu.style.fontSize = "0";
-    menuHidden.style.height = "0";
+    menuHiddenImg.style.height = "0";
     buttonHiddenMenu.style.display = "unset";
     menuIsShowing = false;
+}
+
+function convertNumberToColor(firstValue, secondValue, variation) {
+
+    let proportion, result;
+    let difference = secondValue - firstValue;
+
+    proportion = difference / 255;
+
+    result = variation / proportion;
+
+    console.log(result);
+
+    return result;
 }
