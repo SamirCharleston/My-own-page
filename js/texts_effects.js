@@ -1,11 +1,33 @@
 const titlePresentation = document.getElementById("title-presentation");
+// let wordPosition = 0;
 
 let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
 
-    let phrase = titlePresentations.innerHTML.split("-");
-    let i = 0, j = 0, permissionToResolve = 0, words = [];
+    // let phrase = titlePresentations.innerHTML.split("-");
+    // let multiplierOfTime = 0, permissionToResolve = 0, control = 0;
+    // let letters = phrase[wordPosition].split("");
+    // titlePresentation.innerHTML = "";
 
 
+    // setTimeout(() => { /*Time for show the phrase*/
+    //     for (let letter of letters) {
+    //         setTimeout(() => {/*Time for show letter by letter*/
+    //             titlePresentation.innerHTML += letter;
+    //             control++;
+    //             if (control == letters.length) {
+    //                 setTimeout(() => {
+    //                     typeErase(letters, titlePresentation);
+    //                     console.log("oi")
+    //                 }, (wordPosition * 3000));
+    //             }
+    //         }, 70 * multiplierOfTime);
+    //         multiplierOfTime++;
+    //     }
+    // }, 3000 * wordPosition);
+
+    // wordPosition++;
+
+    /*
     for (let word of phrase) {
         setTimeout(() => {
             j = 0;
@@ -29,8 +51,7 @@ let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
         }, 4000 * i);
 
         i++;
-    }
-
+    }*/
 
 })
 
@@ -38,25 +59,63 @@ wordSequence(titlePresentation).then((titlePresentations) => {
     console.log(titlePresentations);
 }).catch(() => {
     console.log("cheguei no Catch");
-})
+});
 
-function typeWriterEffect() {
-    let letters = titlePresentation.innerHTML.split('');
-    let totalPhrases = 0;
+typeWriteEffect(titlePresentation);
+
+function typeWriteEffect(elementToType) {
+
+    let phrase = elementToType.innerHTML.split("-");
+
+    phrase.forEach((cb, i) => {
+        typeWrite(true, phrase[i], i);
+    });
+
+}
+
+function typeWrite(eraseAfter, wordToType, wordPosition) {
+
+
+    let multiplierOfTime = 0, control = 0;
+    let letters = wordToType.split("");
 
     titlePresentation.innerHTML = "";
 
-    for (i in letters) {
-        if (letters[i] === '-') {
-            totalPhrases++;
+    setTimeout(() => { /*Time for show the phrase*/
+        for (let letter of letters) {
+            setTimeout(() => {/*Time for show letter by letter*/
+                titlePresentation.innerHTML += letter;
+                control++;
+                if (control == letters.length) {
+                    setTimeout(() => {
+                        if (eraseAfter) {
+                            typeErase(letters, titlePresentation);
+                        }
+                    }, (wordPosition * 3000));
+                }
+            }, 70 * multiplierOfTime);
+            multiplierOfTime++;
         }
-    }
+        console.log(wordPosition);
+        wordPosition++;
+    }, 3000 * wordPosition);
+
+
 }
 
-function typeWrite(word, callback) {
+function typeErase(word, titlePresentation) {
 
-}
+    word.forEach((char, i) => {
+        setTimeout(() => {
 
-function typeErase(word, callback) {
+            let decreasingWord = "";
+            word.pop();
 
+            for (j in word) {
+                decreasingWord += word[j];
+            }
+
+            titlePresentation.innerHTML = decreasingWord;
+        }, 20 * i);
+    });
 }
