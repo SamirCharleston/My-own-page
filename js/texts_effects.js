@@ -66,18 +66,24 @@ typeWriteEffect(titlePresentation);
 function typeWriteEffect(elementToType) {
 
     let phrase = elementToType.innerHTML.split("-");
+    let vet = [];
 
-    phrase.forEach((cb, i) => {
-        typeWrite(true, phrase[i], i);
-    });
+    // phrase.forEach((cb, i) => {
+    //     vet[i] = (typeWrite(true, phrase[i], i));
+    // });
+
+    for (i in phrase) {
+        vet[i] = (typeWrite(true, phrase[i], i));
+    }
 
 }
 
 function typeWrite(eraseAfter, wordToType, wordPosition) {
 
-
     let multiplierOfTime = 0, control = 0;
     let letters = wordToType.split("");
+
+    console.log(wordToType.length);
 
     titlePresentation.innerHTML = "";
 
@@ -87,20 +93,20 @@ function typeWrite(eraseAfter, wordToType, wordPosition) {
                 titlePresentation.innerHTML += letter;
                 control++;
                 if (control == letters.length) {
-                    setTimeout(() => {
+                    setTimeout(() => { /**Time to erase the sentence after writing it*/
+                        console.log("Set apagar")
                         if (eraseAfter) {
                             typeErase(letters, titlePresentation);
                         }
-                    }, (wordPosition * 3000));
+                    }, wordPosition * 1000);
                 }
+                console.log("Segundo set")
             }, 70 * multiplierOfTime);
             multiplierOfTime++;
         }
-        console.log(wordPosition);
+        console.log("Primeiro set")
         wordPosition++;
-    }, 3000 * wordPosition);
-
-
+    }, 5000 * wordPosition);
 }
 
 function typeErase(word, titlePresentation) {
