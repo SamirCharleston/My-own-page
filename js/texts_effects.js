@@ -2,15 +2,41 @@ const titlePresentation = document.getElementById("title-presentation");
 
 let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
 
-    resolve(titlePresentations => {
-        let phrase = titlePresentations.innerHTML.split("-");
+    let phrase = titlePresentations.innerHTML.split("-");
+    let i = 0, j = 0, permissionToResolve = 0, words = [];
 
-        console.log("Cheguei na parte de cima");
-    });
+
+    for (let word of phrase) {
+        setTimeout(() => {
+            titlePresentation.innerHTML = "";
+
+            for (let letter of word) {
+                setTimeout(() => {
+
+                    titlePresentation.innerHTML += letter;
+                    if (permissionToResolve == word.length) {
+                        j = 0;
+                    }
+                }, 70 * j);
+
+                j++;
+            }
+
+            permissionToResolve++;
+
+            if (permissionToResolve == phrase.length) {
+                resolve(phrase);
+            }
+        }, 5000 * i);
+
+        i++;
+    }
+
+
 })
 
-wordSequence(titlePresentation).then(() => {
-    console.log("cheguei na parte de baixo");
+wordSequence(titlePresentation).then((titlePresentations) => {
+    console.log(titlePresentations);
 }).catch(() => {
     console.log("cheguei no Catch");
 })
