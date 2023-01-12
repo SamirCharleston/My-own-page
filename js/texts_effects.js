@@ -8,16 +8,14 @@ let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
 
     for (let word of phrase) {
         setTimeout(() => {
+            j = 0;
             titlePresentation.innerHTML = "";
 
             for (let letter of word) {
                 setTimeout(() => {
 
                     titlePresentation.innerHTML += letter;
-                    if (permissionToResolve == word.length) {
-                        j = 0;
-                    }
-                }, 30 * j);
+                }, 70 * j);
 
                 j++;
             }
@@ -27,7 +25,8 @@ let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
             if (permissionToResolve == phrase.length) {
                 resolve(phrase);
             }
-        }, 3000 * i);
+
+        }, 4000 * i);
 
         i++;
     }
