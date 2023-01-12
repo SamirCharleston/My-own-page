@@ -17,7 +17,7 @@ let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
                     if (permissionToResolve == word.length) {
                         j = 0;
                     }
-                }, 70 * j);
+                }, 30 * j);
 
                 j++;
             }
@@ -27,7 +27,7 @@ let wordSequence = (titlePresentations) => new Promise((resolve, reject) => {
             if (permissionToResolve == phrase.length) {
                 resolve(phrase);
             }
-        }, 5000 * i);
+        }, 3000 * i);
 
         i++;
     }
