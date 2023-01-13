@@ -161,19 +161,30 @@ function smoothWriter(phrase, author, elementToInsertText, word = "") {
 
 const animatedElement = document.querySelectorAll("[data-animated]");
 const classAnimatedElement = "animated-element";
+let controlOfAnimation = true;
 
 window.addEventListener("scroll", () => {
-    animatedScroll(classAnimatedElement);
+
+    if (controlOfAnimation) {
+        controlOfAnimation = false;
+        console.log("Entrou no if");
+        setTimeout(() => {
+            animatedScroll(classAnimatedElement);
+        }, 200);
+    }
 });
 
 function animatedScroll(classAnimatedElement) {
 
     let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75);
+    controlOfAnimation = true;
 
     animatedElement.forEach((element, i) => {
 
         if (positionToAnimate > element.offsetTop && i > 0) {
             element.classList.add(classAnimatedElement);
+        } else {
+            element.classList.remove(classAnimatedElement);
         }
     })
 }
