@@ -159,15 +159,21 @@ function smoothWriter(phrase, author, elementToInsertText, word = "") {
  * This section is for animate the titles when the page is scrolled
  */
 
-const titleElement = document.querySelectorAll(".animated-element");
+const animatedElement = document.querySelectorAll("[data-animated]");
+const classAnimatedElement = "animated-element";
 
 window.addEventListener("scroll", () => {
-    scrollingElement();
+    animatedScroll(classAnimatedElement);
 });
 
-function scrollingElement() {
+function animatedScroll(classAnimatedElement) {
 
+    let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75);
 
+    animatedElement.forEach((element, i) => {
 
-    //console.log(window.scrollY);
+        if (positionToAnimate > element.offsetTop && i > 0) {
+            element.classList.add(classAnimatedElement);
+        }
+    })
 }
