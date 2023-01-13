@@ -145,6 +145,13 @@ main .section-top .container-text .text-presentation small {
     text-align: end;
 }
 
+main .section-top .container-text .text-presentation p::after {
+    content: "▉";
+    text-shadow: -4px 0 4px;
+    color: var(--color-about-me);
+    transition: all 1s;
+}
+
 main .section-about-me .diagonal-cut {
     background: var(--color-about-me);
     box-shadow: 0px -10px 10px var(--color-about-me-shadow);
@@ -201,8 +208,6 @@ main .container-about-me .introduction-text {
     border-radius: 15px;
     padding: 10px;
     margin: 0 0 2vw 0;
-    /* position: relative; */
-    /* z-index: 2;*/
 }
 
 main .container-about-me h3 {
