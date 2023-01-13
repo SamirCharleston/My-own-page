@@ -1,8 +1,7 @@
 const titlePresentation = document.getElementById("title-presentation");
-const sentence = ["Hi, I'm Samir", "Be Welcome!", "Here you will find all my projects", "Real projects", "and academic projects", "the technologies I work with", "My trajectory", "My goals", "My achievements", "and more important", "how I can help you to improve your business or your company", "Leave a message", "Contact-me :)"];
+const titleSentence = ["Hi, I'm Samir", "Be Welcome!", "Here you will find all my projects", "Real and academic projects", "the technologies I work with", "My trajectory", "My goals", "My achievements", "and more important", "how I can help you to improve your business or your company", "Leave a message", "Contact-me :)"];
 
-let i = 0, j = 0, timeOut = 70, erase = false, write = true, timeReset = 3000, tempWord = "";
-let delay = false;
+let i = 0, j = 0, timeOut = 70, erase = false, write = true, timeReset = 3000, tempWord = "", delay = false;
 
 titlePresentation.innerHTML = "";
 
@@ -11,12 +10,12 @@ typeWriterEffect();
 function typeWriterEffect() {
 
     if (write) {
-        if (j < sentence[i].length) {
-            titlePresentation.innerHTML += sentence[i][j];
+        if (j < titleSentence[i].length) {
+            titlePresentation.innerHTML += titleSentence[i][j];
             j++;
         }
 
-        if (j == sentence[i].length) {
+        if (j == titleSentence[i].length) {
             write = false;
             erase = true;
             delay = true;
@@ -25,7 +24,7 @@ function typeWriterEffect() {
         timeOut = 70;
     }
 
-    if (i == sentence.length) {
+    if (i == titleSentence.length) {
         i = 0;
     }
 
@@ -63,6 +62,34 @@ function typeWriterEffect() {
     }
 
     setTimeout(typeWriterEffect, timeOut);
+}
+
+
+
+
+/**
+ * The code below is to show effects phrases in the first section.
+ * With a simple aimation.
+ * 
+ * The phrases were requested from an API
+ */
+
+let requestToServer, serverResponse;
+
+requestEffectPhrases();
+
+function requestEffectPhrases() {
+    try {
+        requestToServer = fetch('https://type.fit/api/quotes').then((res) => res.json())
+            .then((res) => showEffectPhrases(res))
+            .catch((err) => console.log(err));
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+function showEffectPhrases(phrases) {
+    console.log(phrases);
 }
 
 

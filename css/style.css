@@ -574,6 +574,10 @@ footer a {
     text-align: center;
 }
 
+.picture-top-small path {
+    fill: blue;
+}
+
 /*Media query selector*/
 
 @media (max-width: 480px) {
