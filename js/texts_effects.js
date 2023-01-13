@@ -3,9 +3,9 @@
  */
 
 const titlePresentation = document.getElementById("title-presentation");
-const titleSentence = ["Hi, I'm Samir", "Be Welcome!", "Here you will find all my projects", "Real and academic projects", "the technologies I work with", "My trajectory", "My goals", "My achievements", "and more important", "how I can help you to improve your business or your company", "Leave a message", "Contact-me :)"];
+const titleSentence = ["Hi, I'm Samir", "Be Welcome!", "here you will find all my projects", "real and academic projects", "the technologies I work with", "my trajectory", "my goals", "my achievements", "and more important", "how I can help you to improve your business or your company", "leave a message or", "Contact-me :)"];
 
-let i = 0, j = 0, timeOut = 70, erase = false, write = true, timeReset = 3000, tempWord = "", delay = false;
+let i = 0, j = 0, timeOut = 70, erase = false, write = true, timeReset = 3000, tempWord = "", delay = false, firstTime = true;
 
 titlePresentation.innerHTML = "";
 
@@ -30,6 +30,8 @@ function typeWriterEffect() {
 
     if (i == titleSentence.length) {
         i = 0;
+        firstTime = true;
+        return;
     }
 
     if (timeOut == timeReset) {
@@ -65,6 +67,11 @@ function typeWriterEffect() {
         }
     }
 
+    if (firstTime && j - 1 == titleSentence[i].length) {
+        timeOut = 3000;
+        firstTime = false;
+    }
+
     setTimeout(typeWriterEffect, timeOut);
 }
 
@@ -80,6 +87,8 @@ function typeWriterEffect() {
 
 const rootProperty = document.querySelector(":root");
 const motivationalTextElement = document.querySelector(".section-top .text-presentation");
+const motivationalParagraph = document.querySelector(".section-top .text-presentation p");
+const motivationalAuthor = document.querySelector(".section-top .text-presentation small");
 let requestToServer, serverResponse, iCounter = 0;
 
 requestEffectPhrases();
@@ -87,7 +96,9 @@ requestEffectPhrases();
 function requestEffectPhrases() {
     try {
         requestToServer = fetch('https://type.fit/api/quotes').then((res) => res.json())
-            .then((res) => showEffectPhrases(res))
+            .then((res) => {
+                setTimeout(() => showEffectPhrases(res), 1000);
+            })
             .catch((err) => console.log(err));
     } catch (err) {
         console.log(err);
@@ -97,7 +108,7 @@ function requestEffectPhrases() {
 function showEffectPhrases(phrases) {
 
     let randomValue = 0, maxTry = 0;
-    let regex = /[a-z|A-Z]/, validPhrase, validAuthor;
+    let regex = /[^null]/, validPhrase, validAuthor;
 
     do {
         randomValue = Math.random() * phrases.length;
@@ -105,7 +116,7 @@ function showEffectPhrases(phrases) {
         validPhrase = regex.test(phrases[randomValue].text);
         validAuthor = regex.test(phrases[randomValue].author);
         maxTry++;
-    } while (validAuthor && validPhrase && maxTry < 10);
+    } while (!(validAuthor && validPhrase) && maxTry < 10);
 
     motivationalTextElement.style.opacity = "1";
 
@@ -115,7 +126,9 @@ function showEffectPhrases(phrases) {
             phrases[randomValue].author,
             motivationalTextElement);
     } else {
-        rootProperty.style.setProperty("--opacity-cursor", "0");
+        smoothWriter(motivationalParagraph.innerText,
+            motivationalAuthor.innerText,
+            motivationalTextElement);
     }
 }
 
