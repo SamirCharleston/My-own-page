@@ -136,7 +136,13 @@ main .section-top .container-text .text-greeting h2::after {
 
 main .section-top .container-text .text-presentation {
     text-align: justify;
-    text-indent: 1em;
+}
+
+main .section-top .container-text .text-presentation small {
+    font-size: 0.8em;
+    display: block;
+    margin-top: 10px;
+    text-align: end;
 }
 
 main .section-about-me .diagonal-cut {
