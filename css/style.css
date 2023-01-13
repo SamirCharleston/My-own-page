@@ -23,11 +23,15 @@
     --direction-down: -20px;
     --background-gradient: linear-gradient(0deg, black 99%, #a3ff2f);
     --opacity-cursor: 1;
+    --animationSquareTimeTransition: 0.3s;
+}
+
+[data-animated] {
+    transition: all 0.3s;
+    opacity: 0;
 }
 
 [data-animated="right-to-center"] {
-    transition: all 0.3s;
-    opacity: 0;
     transform: translateX(-30vw);
 }
 
@@ -333,6 +337,26 @@ main .section-my-technologies .yellow-square-animated {
     width: 40px;
     background: var(--color-my-technologies);
     position: absolute;
+    opacity: 1;
+    transition: all var(--animationSquareTimeTransition);
+    animation: 20s blink-square ease infinite;
+}
+
+@keyframes blink-square {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
 }
 
 main .section-my-technologies .frame-container {

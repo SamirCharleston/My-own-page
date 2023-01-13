@@ -181,7 +181,8 @@ function animatedScroll(classAnimatedElement) {
 
     animatedElement.forEach((element, i) => {
 
-        if (positionToAnimate > element.offsetTop && i > 0) {
+        if (positionToAnimate > element.offsetTop) {
+            // && i > 0
             element.classList.add(classAnimatedElement);
         } else {
             element.classList.remove(classAnimatedElement);
