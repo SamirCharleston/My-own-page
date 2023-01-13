@@ -96,21 +96,27 @@ function requestEffectPhrases() {
 
 function showEffectPhrases(phrases) {
 
-    let randomValue = Math.random() * phrases.length;
-    let maxTry = 0;
+    let randomValue = 0, maxTry = 0;
+    let regex = /[a-z|A-Z]/, validPhrase, validAuthor;
 
     do {
+        randomValue = Math.random() * phrases.length;
         randomValue = Math.ceil(randomValue);
-        phrases[randomValue].text;
-        phrases[randomValue].author;
+        validPhrase = regex.test(phrases[randomValue].text);
+        validAuthor = regex.test(phrases[randomValue].author);
         maxTry++;
-    } while (phrases[randomValue].author === null && maxTry < 10);
+    } while (validAuthor && validPhrase && maxTry < 10);
 
-    motivationalTextElement.innerHTML = "";
+    motivationalTextElement.style.opacity = "1";
 
-    smoothWriter(phrases[randomValue].text,
-        phrases[randomValue].author,
-        motivationalTextElement);
+    if (validPhrase && validAuthor) {
+        motivationalTextElement.innerHTML = "";
+        smoothWriter(phrases[randomValue].text,
+            phrases[randomValue].author,
+            motivationalTextElement);
+    } else {
+        rootProperty.style.setProperty("--opacity-cursor", "0");
+    }
 }
 
 function smoothWriter(phrase, author, elementToInsertText, word = "") {
@@ -130,5 +136,25 @@ function smoothWriter(phrase, author, elementToInsertText, word = "") {
         return;
     }
 
-    setTimeout(() => smoothWriter(phrase, author, elementToInsertText, word), 1);
+    setTimeout(() => smoothWriter(phrase, author, elementToInsertText, word), 10);
+}
+
+
+
+
+/**
+ * This section is for animate the titles when the page is scrolled
+ */
+
+const titleElement = document.querySelectorAll(".animated-element");
+
+window.addEventListener("scroll", () => {
+    scrollingElement();
+});
+
+function scrollingElement() {
+
+
+
+    //console.log(window.scrollY);
 }

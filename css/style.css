@@ -25,6 +25,17 @@
     --opacity-cursor: 1;
 }
 
+[data-animated="right-to-center"] {
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(-30vw);
+}
+
+[data-animated="right-to-center"].animated-element {
+    transform: translateX(0);
+    opacity: 1;
+}
+
 img {
     max-width: 320px;
 }
@@ -137,6 +148,7 @@ main .section-top .container-text .text-greeting h2::after {
 
 main .section-top .container-text .text-presentation {
     text-align: justify;
+    opacity: 0;
 }
 
 main .section-top .container-text .text-presentation small {
