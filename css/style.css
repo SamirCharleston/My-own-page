@@ -40,6 +40,10 @@
     opacity: 1;
 }
 
+.section-about-me [data-animated="right-to-center"].animated-element:first-child {
+    transform: translateY(20vw);
+}
+
 img {
     max-width: 320px;
 }
@@ -189,7 +193,7 @@ main .section-about-me #diagonal-cut-below {
 }
 
 main .section-about-me .title-block {
-    position: relative;
+    /*position: relative;*/
     top: 7vw;
 }
 
@@ -338,7 +342,6 @@ main .section-my-technologies .yellow-square-animated {
     background: var(--color-my-technologies);
     position: absolute;
     opacity: 1;
-    transition: all var(--animationSquareTimeTransition);
     animation: 20s blink-square ease infinite;
 }
 
