@@ -78,8 +78,9 @@ function typeWriterEffect() {
  * The phrases were requested from an API
  */
 
+const rootProperty = document.querySelector(":root");
 const motivationalTextElement = document.querySelector(".section-top .text-presentation");
-let requestToServer, serverResponse;
+let requestToServer, serverResponse, iCounter = 0;
 
 requestEffectPhrases();
 
@@ -96,11 +97,38 @@ function requestEffectPhrases() {
 function showEffectPhrases(phrases) {
 
     let randomValue = Math.random() * phrases.length;
-    randomValue = Math.ceil(randomValue);
+    let maxTry = 0;
 
-    console.log(phrases);
+    do {
+        randomValue = Math.ceil(randomValue);
+        phrases[randomValue].text;
+        phrases[randomValue].author;
+        maxTry++;
+    } while (phrases[randomValue].author === null && maxTry < 10);
 
-    motivationalTextElement.innerHTML = `<p>"${phrases[randomValue].text}"</p>
-                                        <small>${phrases[randomValue].author}</small>`;
+    motivationalTextElement.innerHTML = "";
+
+    smoothWriter(phrases[randomValue].text,
+        phrases[randomValue].author,
+        motivationalTextElement);
 }
 
+function smoothWriter(phrase, author, elementToInsertText, word = "") {
+
+    if (iCounter == 0) {
+        phrase = phrase.split("");
+    }
+
+    if (iCounter < phrase.length) {
+        word += phrase[iCounter];
+        elementToInsertText.innerHTML = `<p>${word}</p>`;
+        iCounter++;
+    } else {
+        rootProperty.style.setProperty("--opacity-cursor", "0");
+        elementToInsertText.innerHTML += `<small>${author}</small>`;
+        iCounter = 0;
+        return;
+    }
+
+    setTimeout(() => smoothWriter(phrase, author, elementToInsertText, word), 1);
+}

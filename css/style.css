@@ -22,6 +22,7 @@
     --font-size-top-menu: 15px;
     --direction-down: -20px;
     --background-gradient: linear-gradient(0deg, black 99%, #a3ff2f);
+    --opacity-cursor: 1;
 }
 
 img {
@@ -150,6 +151,7 @@ main .section-top .container-text .text-presentation p::after {
     text-shadow: -4px 0 4px;
     color: var(--color-about-me);
     transition: all 1s;
+    opacity: var(--opacity-cursor);
 }
 
 main .section-about-me .diagonal-cut {
