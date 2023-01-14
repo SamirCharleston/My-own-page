@@ -80,7 +80,7 @@ function typeWriterEffect() {
 
 /**
  * The code below is to show effects phrases in the first section.
- * With a simple aimation.
+ * With a simple animation.
  * 
  * The phrases were requested from an API
  */
@@ -156,7 +156,8 @@ function smoothWriter(phrase, author, elementToInsertText, word = "") {
 
 
 /**
- * This section is for animate the titles when the page is scrolled
+ * This section is to attribute a class to animate some elements,
+ *  when these elements appear on the bottom of the viewport.
  */
 
 const animatedElement = document.querySelectorAll("[data-animated]");
