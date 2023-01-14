@@ -31,6 +31,11 @@
     opacity: 0;
 }
 
+.animateded-forms-container {
+    opacity: 1;
+    transition: cubic-bezier(.28, -0.22, .23, 1.64) 0.7s;
+}
+
 [data-animated="right-to-center"] {
     transform: translateX(-30vw);
 }
@@ -47,8 +52,12 @@
     transform: translateY(-30vw);
 }
 
+[data-animated="scale"] {
+    transform: scaleY(0.0001);
+}
+
 [data-animated].animated-element {
-    transform: translate(0);
+    transform: translate(0) scale(1);
     opacity: 1;
 }
 
@@ -265,8 +274,7 @@ main .container-about-me .introduction-text h3,
 .container-about-me .introduction-text p,
 .container-about-me .complement-text h3,
 .container-about-me .complement-text p {
-    color: var(--color-about-me);
-    mix-blend-mode: difference;
+    color: var(--color-background);
     font-weight: 400;
     font-size: 1.1em;
     text-indent: 1em;
