@@ -179,7 +179,7 @@ function animatedScroll(classAnimatedElement) {
     let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75);
     controlOfAnimation = true;
 
-    animatedElement.forEach((element, i) => {
+    animatedElement.forEach((element) => {
 
         if (positionToAnimate > element.offsetTop) {
             element.classList.add(classAnimatedElement);

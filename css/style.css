@@ -35,12 +35,25 @@
     transform: translateX(-30vw);
 }
 
-[data-animated="right-to-center"].animated-element {
-    transform: translateX(0);
+[data-animated="left-to-center"] {
+    transform: translateX(30vw);
+}
+
+[data-animated="bottom-to-center"] {
+    transform: translateY(30vw);
+}
+
+[data-animated="top-to-center"] {
+    transform: translateY(-30vw);
+}
+
+[data-animated].animated-element {
+    transform: translate(0);
     opacity: 1;
 }
 
-.section-about-me [data-animated="right-to-center"].animated-element:first-child {
+
+.section-about-me [data-animated="right-to-center"].animated-element {
     transform: translateY(20vw);
 }
 
@@ -709,10 +722,6 @@ footer a {
         gap: 16vw;
     }
 
-    .section-about-me {
-        margin-top: 30vw;
-    }
-
     main .section-about-me .diagonal-cut,
     main .section-about-me #diagonal-cut-below {
         transform: matrix(1, -0.3, 0, 1, 0, 0);
@@ -770,6 +779,7 @@ footer a {
 
     main .section-top .container-text .text-presentation {
         padding: 0 5vw;
+        min-height: 150px;
     }
 
 }
