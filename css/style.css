@@ -284,7 +284,6 @@ main .container-about-me .introduction-text h3,
 }
 
 main .section-avatar {
-    background-color: var(--color-background);
     width: 100%;
     height: 23vw;
     max-height: 330px;
@@ -729,6 +728,31 @@ footer a {
     main .section-top .container-text {
         align-items: center;
         gap: 16vw;
+    }
+
+    main .section-about-me {
+        background: url(https://neilpatel.com/wp-content/uploads/2017/12/codigos-html-para-paginas-web.jpeg) fixed;
+    }
+
+    main .section-about-me .block-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    main .section-about-me .black-block {
+        height: 50%;
+        width: 100%;
+        background: black;
+    }
+
+    main .section-about-me .black-block:last-child {
+        height: 70%;
+    }
+
+    main .section-about-me .mid {
+        height: 40%;
+        background-color: unset;
     }
 
     main .section-about-me .diagonal-cut,
