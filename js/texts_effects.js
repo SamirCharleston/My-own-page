@@ -161,24 +161,27 @@ function smoothWriter(phrase, author, elementToInsertText, word = "") {
  */
 
 const animatedElement = document.querySelectorAll("[data-animated]");
+const aboutMeElement = document.getElementById("black-block");
+const avatarPhotoElement = document.querySelector(".section-avatar .frame-avatar");
 const classAnimatedElement = "animated-element";
-let controlOfAnimation = true;
+let timedAnimationControl = true, sequenceAnimationControl = true, itsAppearing = true;
 
 window.addEventListener("scroll", () => {
 
-    if (controlOfAnimation) {
-        controlOfAnimation = false;
-        console.log("Entrou no if");
+    if (timedAnimationControl) {
+        timedAnimationControl = false;
         setTimeout(() => {
             animatedScroll(classAnimatedElement);
+            showAboutMeBackground(avatarPhotoElement, aboutMeElement);
+            timedAnimationControl = true;
         }, 200);
     }
 });
 
+
 function animatedScroll(classAnimatedElement) {
 
     let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75);
-    controlOfAnimation = true;
 
     animatedElement.forEach((element) => {
 
@@ -188,4 +191,22 @@ function animatedScroll(classAnimatedElement) {
             element.classList.remove(classAnimatedElement);
         }
     })
+}
+
+function showAboutMeBackground(elementScroll, elementToAply) {
+
+    let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75) - 500;
+
+
+    let actualPosition = elementScroll.getBoundingClientRect().y;
+
+    console.log("Position to animate " + positionToAnimate);
+    console.log("Actual position " + actualPosition);
+
+    if (positionToAnimate > actualPosition) {
+
+        elementToAply.style.opacity = "0";
+    } else {
+        elementToAply.style.opacity = "1";
+    }
 }
