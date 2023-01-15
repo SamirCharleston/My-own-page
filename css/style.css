@@ -259,7 +259,8 @@ main #container-below {
 
 main .section-about-me {
     background: url(https://neilpatel.com/wp-content/uploads/2017/12/codigos-html-para-paginas-web.jpeg) fixed;
-    background-size: cover;
+    /* background-size: cover;*/
+
 }
 
 main .section-about-me #black-block {

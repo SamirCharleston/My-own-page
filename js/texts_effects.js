@@ -197,11 +197,7 @@ function showAboutMeBackground(elementScroll, elementToAply) {
 
     let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75) - 500;
 
-
     let actualPosition = elementScroll.getBoundingClientRect().y;
-
-    console.log("Position to animate " + positionToAnimate);
-    console.log("Actual position " + actualPosition);
 
     if (positionToAnimate > actualPosition) {
 
