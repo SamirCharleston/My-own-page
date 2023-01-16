@@ -207,10 +207,12 @@ function showAboutMeBackground(elementScroll, elementToAply) {
 
     if (positionToAnimate > actualPosition && !parallaxIsAppearing) {
         elementToAply.style.opacity = "0";
+        elementToAply.style.animation = "0.7s delay-appearance normal";
         parallaxIsAppearing = true;
         //console.log("Esconde bloco preto ");
     } else if (positionToAnimate < actualPosition && parallaxIsAppearing) {
         elementToAply.style.opacity = "1";
+        elementToAply.style.animation = "unset";
         parallaxIsAppearing = false;
         //console.log("Exibe bloco preto");
     }
