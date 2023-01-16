@@ -164,7 +164,7 @@ const animatedElement = document.querySelectorAll("[data-animated]");
 const aboutMeElement = document.getElementById("black-block");
 const avatarPhotoElement = document.querySelector(".section-avatar .frame-avatar");
 const classAnimatedElement = "animated-element";
-let timedAnimationControl = true, sequenceAnimationControl = true, itsAppearing = true;
+let timedAnimationControl = true, sequenceAnimationControl = true, itsAppearing = [], parallaxIsAppearing = false;
 
 window.addEventListener("scroll", () => {
 
@@ -178,17 +178,23 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
 function animatedScroll(classAnimatedElement) {
 
     let positionToAnimate = window.pageYOffset + (window.innerHeight * 0.75);
 
-    animatedElement.forEach((element) => {
+    //console.log(positionToAnimate);
 
-        if (positionToAnimate > element.offsetTop) {
+    animatedElement.forEach((element, i) => {
+        elementPosition = element.offsetTop;
+
+        if (positionToAnimate > elementPosition && !itsAppearing[i]) {
             element.classList.add(classAnimatedElement);
-        } else {
+            itsAppearing[i] = true;
+            //console.log("Exibe o elemento " + [i])
+        } else if (positionToAnimate < elementPosition && itsAppearing[i]) {
             element.classList.remove(classAnimatedElement);
+            itsAppearing[i] = false;
+            //console.log("Esconde o elemento " + [i]);
         }
     })
 }
@@ -199,10 +205,13 @@ function showAboutMeBackground(elementScroll, elementToAply) {
 
     let actualPosition = elementScroll.getBoundingClientRect().y;
 
-    if (positionToAnimate > actualPosition) {
-
+    if (positionToAnimate > actualPosition && !parallaxIsAppearing) {
         elementToAply.style.opacity = "0";
-    } else {
+        parallaxIsAppearing = true;
+        //console.log("Esconde bloco preto ");
+    } else if (positionToAnimate < actualPosition && parallaxIsAppearing) {
         elementToAply.style.opacity = "1";
+        parallaxIsAppearing = false;
+        //console.log("Exibe bloco preto");
     }
 }
