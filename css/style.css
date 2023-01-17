@@ -366,7 +366,7 @@ main .section-my-technologies .title-container h2 {
 }
 
 main .section-my-technologies .separator {
-    background-color: var(--color-my-technologies);
+    background-color: var(--color-background);
     box-shadow: 0px 4px 4px 0px black;
     height: 5px;
     position: relative;
@@ -407,10 +407,8 @@ main .section-my-technologies .yellow-square-animated {
 
 }
 
-main .section-my-technologies .frame-container {
-    overflow: hidden;
-}
 
+/* 
 main .section-my-technologies .frame-scroll {
     display: flex;
     z-index: 1;
@@ -432,11 +430,19 @@ main .section-my-technologies .frame-scroll::-webkit-scrollbar {
 
 main .section-my-technologies .frame-scroll:last-child {
     margin-bottom: 3vw;
+} */
+
+main .section-my-technologies .frame-container {
+    overflow: scroll;
+    perspective: 1px;
+    height: 100vh;
 }
 
-main .section-my-technologies .frame-scroll .frame {
-    height: 100px;
-    width: 100px;
+main .section-my-technologies .frame {
+    height: 100vw;
+    width: 100vw;
+    max-width: 350px;
+    max-height: 350px;
     min-width: 100px;
     display: inline-flex;
     align-items: center;
@@ -446,23 +452,75 @@ main .section-my-technologies .frame-scroll .frame {
     overflow: hidden;
     box-shadow: inset 0px -2px 4px rgb(0 0 0 / 25%);
     filter: drop-shadow(0px 4px 4px rgba(251, 255, 47, 0.2)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
 }
 
-main .section-my-technologies .frame-scroll svg {
+main .section-my-technologies .frame:nth-child(1) {
+    transform: translateZ(-2px) translate(-94vw, 0vw) scale(1);
+    z-index: 2;
+}
+
+main .section-my-technologies .frame:nth-child(2) {
+    transform: translateZ(-5px) translate(188vw, 0vw) scale(2);
+    z-index: 2;
+}
+
+main .section-my-technologies .frame:nth-child(3) {
+    transform: translateZ(0px) translate(0vw, 0vw) scale(0.4);
+    z-index: 5;
+}
+
+main .section-my-technologies .frame:nth-child(4) {
+    transform: translateZ(-2px) translate(77vw, 0vw) scale(1);
+    z-index: 2;
+}
+
+main .section-my-technologies .frame:nth-child(5) {
+    transform: translateZ(-5px) translate(-59vw, 0vw) scale(2);
+    z-index: 2;
+}
+
+main .section-my-technologies .frame:nth-child(6) {
+    transform: translateZ(0px) translate(-17vw, 0vw) scale(0.4);
+    z-index: 5;
+}
+
+main .section-my-technologies .frame:nth-child(7) {
+    transform: translateZ(-2px) translate(-94vw, 0vw) scale(1);
+    z-index: 2;
+}
+
+main .section-my-technologies .frame:nth-child(8) {
+    transform: translateZ(-5px) translate(188vw, 0vw) scale(2);
+    z-index: 2;
+}
+
+main .section-my-technologies .frame:nth-child(9) {
+    transform: translateZ(0px) translate(0vw, 0vw) scale(0.4);
+    z-index: 5;
+}
+
+main .section-my-technologies .frame:nth-child(10) {
+    transform: translateZ(-3px) translate(-94vw, -65vw) scale(1.2);
+    z-index: 2;
+    margin-bottom: 100vh;
+}
+
+main .section-my-technologies .frame svg {
     height: 84%;
     width: 84%;
 }
 
-main .section-my-technologies .frame-scroll svg path {
+main .section-my-technologies .frame svg path {
     fill: var(--color-background);
     stroke: var(--color-background);
 }
 
-main .section-my-technologies .frame-scroll svg .icon-fill-none {
+main .section-my-technologies .frame svg .icon-fill-none {
     fill: none;
 }
 
-main .section-my-technologies .frame-scroll svg .icon-stroke-none {
+main .section-my-technologies .frame svg .icon-stroke-none {
     stroke: none;
 }
 

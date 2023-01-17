@@ -16,7 +16,18 @@ mediaMobileLength.addEventListener("resize", () => decideIfShowMenu());
 menu.addEventListener("mouseleave", () => decideIfShowMenu());
 
 window.addEventListener("scroll", () => {
+
     decideIfShowMenu();
+    gapMovement();
+
+    if (timedAnimationControl) {
+        timedAnimationControl = false;
+        setTimeout(() => {
+            animatedScroll(classAnimatedElement);
+            showAboutMeBackground(avatarPhotoElement, aboutMeElement);
+            timedAnimationControl = true;
+        }, 200);
+    }
 });
 
 function decideIfShowMenu() {
