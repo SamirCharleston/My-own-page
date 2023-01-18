@@ -18,7 +18,6 @@ menu.addEventListener("mouseleave", () => decideIfShowMenu());
 window.addEventListener("scroll", () => {
 
     decideIfShowMenu();
-    gapMovement();
 
     if (timedAnimationControl) {
         timedAnimationControl = false;
